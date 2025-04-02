@@ -3,6 +3,19 @@
 ## Project Overview
 A modern web application built with React and TypeScript for booking skip hire services. This application allows users to search for skips by postcode, filter options by size and features, and complete the booking process with a streamlined user experience.
 
+## Getting Started
+
+### Running the Project
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev -- --host
+```
+
+The `--host` flag makes the application accessible on your local network, allowing you to test on multiple devices such as phones and tablets.
+
 ## Features
 - **Location-based Skip Search**: Find available skips in your area
 - **Advanced Filtering**: Filter skips by size, waste type compatibility, and placement options
@@ -91,6 +104,7 @@ Our testing approach follows these principles:
 #### 2. Utility Function Tests
 - **Input/Output Testing**: Verifying correct function behavior
   - `filterSkips`: Testing filtering logic for various criteria
+  - `getSkipImageUrl`: Testing image URL selection based on skip properties
 
 #### 3. Custom Hook Tests
 - **State Management**: Testing hook state initialization and updates
