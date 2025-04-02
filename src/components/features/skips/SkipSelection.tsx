@@ -170,26 +170,28 @@ const SkipSelection = ({ skips, selectedSkip, onSelectSkip }: SkipSelectionProps
                 transition={{ duration: 0.2 }}
                 className="overflow-hidden"
               >
-                <div 
-                  ref={filterScrollRef}
-                  className="flex gap-2 pb-1 overflow-x-auto scrollbar-hide"
-                >
-                  {filterOptions.map(filter => (
-                    <button
-                      key={filter.id}
-                      data-filter={filter.id}
-                      onClick={() => handleFilterClick(filter.id)}
-                      className={`
-                        px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap flex-shrink-0
-                        transition-all duration-200 transform hover:-translate-y-0.5
-                        ${activeFilter === filter.id 
-                          ? 'bg-[#0037C1] text-white' 
-                          : 'bg-[#2A2A2A] text-white hover:bg-[#3A3A3A]'}
-                      `}
-                    >
-                      {filter.label}
-                    </button>
-                  ))}
+                <div className="w-full overflow-x-hidden">
+                  <div 
+                    ref={filterScrollRef}
+                    className="flex gap-2 pb-1 overflow-x-auto no-scrollbar"
+                  >
+                    {filterOptions.map(filter => (
+                      <button
+                        key={filter.id}
+                        data-filter={filter.id}
+                        onClick={() => handleFilterClick(filter.id)}
+                        className={`
+                          px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap flex-shrink-0
+                          transition-all duration-200 transform hover:-translate-y-0.5
+                          ${activeFilter === filter.id 
+                            ? 'bg-[#0037C1] text-white' 
+                            : 'bg-[#2A2A2A] text-white hover:bg-[#3A3A3A]'}
+                        `}
+                      >
+                        {filter.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             )}
