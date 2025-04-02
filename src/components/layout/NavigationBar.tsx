@@ -93,37 +93,41 @@ const NavigationBar = () => {
           </>
         )}
         
-        <div 
-          ref={scrollRef}
-          className="flex items-center py-3 px-4 overflow-x-auto scrollbar-hide"
-        >
-          {steps.map((step, index) => (
-            <div key={index} className="flex items-center flex-shrink-0">
-              {/* Step item */}
-              <div 
-                className={`
-                  flex items-center gap-2 px-3 py-2 rounded-md transition-all duration-300
-                  ${getStepClasses(step.status)}
-                  ${step.status !== 'upcoming' ? 'cursor-pointer hover:bg-[#2A2A2A]/50' : 'cursor-default'}
-                `}
-                onClick={step.status !== 'upcoming' && step.onClick ? step.onClick : undefined}
-                aria-current={step.status === 'current' ? 'step' : undefined}
-              >
-                <div className={`w-6 h-6 flex items-center justify-center ${getIconClasses(step.status)}`}>
-                  <step.icon size={20} />
+        <div className="w-full overflow-x-hidden">
+          <div className="container mx-auto px-4">
+            <div 
+              className="flex items-center py-2 overflow-x-auto no-scrollbar"
+              ref={scrollRef}
+            >
+              {steps.map((step, index) => (
+                <div key={index} className="flex items-center flex-shrink-0">
+                  {/* Step item */}
+                  <div 
+                    className={`
+                      flex items-center gap-2 px-3 py-2 rounded-md transition-all duration-300
+                      ${getStepClasses(step.status)}
+                      ${step.status !== 'upcoming' ? 'cursor-pointer hover:bg-[#2A2A2A]/50' : 'cursor-default'}
+                    `}
+                    onClick={step.status !== 'upcoming' && step.onClick ? step.onClick : undefined}
+                    aria-current={step.status === 'current' ? 'step' : undefined}
+                  >
+                    <div className={`w-6 h-6 flex items-center justify-center ${getIconClasses(step.status)}`}>
+                      <step.icon size={20} />
+                    </div>
+                    
+                    <span className="whitespace-nowrap">{step.label}</span>
+                  </div>
+                  
+                  {/* Connector line */}
+                  {index < steps.length - 1 && (
+                    <div className="px-2">
+                      <div className={`h-[1px] w-12 transition-colors duration-500 ${getConnectorClasses(index)}`}></div>
+                    </div>
+                  )}
                 </div>
-                
-                <span className="whitespace-nowrap">{step.label}</span>
-              </div>
-              
-              {/* Connector line */}
-              {index < steps.length - 1 && (
-                <div className="px-2">
-                  <div className={`h-[1px] w-12 transition-colors duration-500 ${getConnectorClasses(index)}`}></div>
-                </div>
-              )}
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

@@ -3,6 +3,36 @@
 ## Project Overview
 A modern web application built with React and TypeScript for booking skip hire services. This application allows users to search for skips by postcode, filter options by size and features, and complete the booking process with a streamlined user experience.
 
+## Application Screenshots
+
+![Desktop 1](./screenshots/1.png)
+*Desktop screen*
+
+![Desktop 1](./screenshots/2.png)
+*Desktop screen*
+
+![Desktop 1](./screenshots/3.png)
+*Desktop screen*
+
+![Desktop 1](./screenshots/4.png)
+*Desktop screen*
+
+![Desktop 1](./screenshots/5.png)
+*Mobile screen*
+
+![Desktop 5](./screenshots/5.png)
+*Mobile screen*
+
+![Desktop 6](./screenshots/6.png)
+*Mobile screen*
+
+![Desktop 7](./screenshots/7.png)
+*Mobile screen*
+
+![Desktop 8](./screenshots/8.png)
+*Mobile screen*
+
+
 ## Getting Started
 
 ### Running the Project
